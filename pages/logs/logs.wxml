@@ -1,0 +1,29 @@
+<!--logs.wxml-->
+<!-- <view class="container log-list">
+  <block wx:for="{{logs}}" wx:for-item="log">
+    <text class="log-item">{{index + 1}}. {{log}}</text>
+  </block>
+</view> -->
+
+<swiper indicator-dots="true" autoplay="true" indicator-color="rgba(106, 140, 200, 1)" indicator-active-color="rgba(243, 239, 121, 1)" circular="true" vertical="true">
+  <swiper-item>
+    <image src='/images/banner1.jpg'></image>
+  </swiper-item>
+  <swiper-item>
+    <image src='/images/banner2.jpg'></image>
+  </swiper-item>
+</swiper>
+
+<movable-area>
+  <movable-view direction="all" bindtap='toCamera'>
+    move
+  </movable-view>
+</movable-area>
+
+<!-- <view>
+  <icon type="search" size="20"></icon>
+</view> -->
+
+<!-- <audio src='' loop='true' controls='true' poster=''></audio> -->
+
+<audio poster="{{poster}}" name="{{name}}" author="{{author}}" src="{{src}}" id="myAudio" controls loop></audio>
