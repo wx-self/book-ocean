@@ -1,0 +1,20 @@
+<scroll-view>
+  <view wx:if="{{voices}}" class="common-list" style="margin-bottom:120rpx;">
+    <block wx:for="{{voices}}">
+      <view class="board">
+        <view class="cell">
+          <view class="cell-bd" data-key="{{item.filePath}}" bindtap="gotoPlay">
+            <view class="date">存储路径:{{item.filePath}}</view>
+            <view class="date">存储时间:{{item.createTime}}</view>
+            <view class="date">音频大小:{{item.size}}KB</view>
+          </view>
+
+        </view>
+      </view>
+    </block>
+  </view>
+</scroll-view>
+
+<view class="record-style">
+  <button class="btn-style" bindtouchstart="touchdown" bindtouchend="touchup">按住 录音</button>
+</view>

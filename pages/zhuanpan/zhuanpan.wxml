@@ -1,0 +1,79 @@
+
+<!--index.wxml-->
+<view class="circle-out" >
+  <view class="circle-in"  > 
+  <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" ></image>
+
+  <view class="menu-list" catchtouchmove="buttonMove" catchtouchstart="buttonStart" catchtouchend="buttonEnd">
+    <view class="menu-item" catchtouchend="showName" data-name="{{item.menu}}" wx:for="{{menuList}}" wx:key="unique"  animation="{{animationData}}">
+      <view  class="menu-circle-item" style="-webkit-transform: rotate({{item.deg}}deg);" data-menu="{{item.menu}}">
+        <!-- <image class="image-style" src="{{item.src}}"></image> -->
+      </view>
+      <view class="menu-circle-text-item" style="-webkit-transform: rotate({{item.deg}}deg)">
+        <text class="text-style">{{item.menu}}</text>
+      </view>
+    </view>
+  </view>
+
+ </view>
+</view>
+
+<!-- 
+  onload中先设置原点坐标 dotPoint 
+
+  事件分类：
+    冒泡事件：当一个组件上的事件被触发之后，该事件会向父节点传递
+    非冒泡事件：当一个组件上的事件被触发之后，该事件不会向父节点传递
+  冒泡事件列表：
+    touchstart：手指触摸动作开始
+    touchmove：手指触摸后移动
+    touchcancel：手指触摸动作动作被打断 如来电提醒、弹窗
+    touchend：手指触摸动作结束
+    tap：手指触摸后马上离开
+    longpress：手指触摸后，超过350ms再离开 如果指定了事件回调函数并触发了这个事件，tap事件将不被触发
+    longtap：手指触摸后，超过350ms再离开
+    transitionend：在css中的transition或者wx.createAnimation动画结束后触发
+    animationstart：在css的animation动画开始时触发
+    animationiteration：在css的animation一次迭代结束时触发
+    animationend：在css的animation动画完成时触发
+  事件绑定的写法：
+    bind 和 catch 后面跟上事件的类型
+  事件的对应的参数event：
+    {
+      // 基础事件对象属性列表
+      "type": "", //事件类型
+      "timeStamp": 0, // 事件生成时的时间戳(页面打开到触发事件所经过的毫米数)
+      "target": { // 触发事件的组件的一些属性值的集合
+        "id": "", // 事件源组件id
+        "tagName": "", // 当前组件的类型
+        "dataset": {} // 事件源组件上由 data- 开头的自定义属性组成的集合
+      },
+      "currentTarget": { //当前组件的一些属性值的集合
+        "id": "",
+        "tagName": "",
+        "dataset": {}
+      },
+
+      // 自定义事件对象属性列表
+      "detail": { // 额外的信息
+        "x": 0,
+        "y": 0
+      },
+
+      // 触摸事件对象属性列表
+      "touches": [{ // 当前停留在屏幕中的触摸点信息的数组
+        "identifier": ,//触摸点的标识符
+        "pageX": ,//距离文档的左上角的距离，文档的左上角为原点，横向为x轴，纵向为y轴
+        "pageY": ,
+        "clientX": , // 距离页面的可显示区域(屏幕除去导航条)左上角的距离
+        "clientY": 
+      }],
+      "changedTouches": [{ // 当前变化的触摸点信息的数组
+        "identifier": ,
+        "pageX": ,
+        "pageY": ,
+        "clientX": ,
+        "clientY": 
+      }]
+    }
+-->

@@ -5,7 +5,12 @@
     "pages/iphone-cropper/iphone-cropper",
     "pages/test/test",
     "pages/camera/camera",
-    "pages/scanCode/scanCode"
+    "pages/scanCode/scanCode",
+    "pages/zhuanpan/zhuanpan",
+    "pages/form/form",
+    "pages/picker/picker",
+    "pages/live-pusher/live-pusher",
+    "pages/record/record"
   ],
   "window": {
     "backgroundTextStyle": "light",

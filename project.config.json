@@ -21,7 +21,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": -1,
+			"current": 6,
 			"list": [
 				{
 					"id": -1,
@@ -51,6 +51,36 @@
 					"id": -1,
 					"name": "scanCode",
 					"pathName": "pages/scanCode/scanCode",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "zhuanpan",
+					"pathName": "pages/zhuanpan/zhuanpan",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "form",
+					"pathName": "pages/form/form",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "picker",
+					"pathName": "pages/picker/picker",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "live-pusher",
+					"pathName": "pages/live-pusher/live-pusher",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "Record",
+					"pathName": "pages/record/record",
 					"query": ""
 				}
 			]
