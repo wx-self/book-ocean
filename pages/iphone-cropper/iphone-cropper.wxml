@@ -1,3 +1,0 @@
-<canvas canvas-id='myCanvas'></canvas>
- <image src="{{src}}"></image> 
-<view bindtap='cropperEvent'>cropper</view>

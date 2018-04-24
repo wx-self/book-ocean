@@ -8,9 +8,9 @@
 		"newFeature": true
 	},
 	"compileType": "miniprogram",
-	"libVersion": "1.6.6",
+	"libVersion": "1.9.91",
 	"appid": "wx2f331cd197304866",
-	"projectname": "book-ocean",
+	"projectname": "FindBook",
 	"condition": {
 		"search": {
 			"current": -1,
@@ -20,39 +20,17 @@
 			"current": -1,
 			"list": []
 		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"list": []
+		},
 		"miniprogram": {
 			"current": -1,
 			"list": [
-				{
-					"id": -1,
-					"name": "iphone-cropper",
-					"pathName": "pages/iphone-cropper/iphone-cropper",
-					"query": "imageSrc=http://img05.tooopen.com/images/20140328/sy_57865838889.jpg"
-				},
-				{
-					"id": -1,
-					"name": "test",
-					"pathName": "pages/test/test",
-					"query": ""
-				},
-				{
-					"id": -1,
-					"name": "swiper",
-					"pathName": "pages/logs/logs",
-					"query": ""
-				},
-				{
-					"id": -1,
-					"name": "camera",
-					"pathName": "pages/camera/camera",
-					"query": ""
-				},
-				{
-					"id": -1,
-					"name": "scanCode",
-					"pathName": "pages/scanCode/scanCode",
-					"query": ""
-				}
+				
 			]
 		}
 	}
