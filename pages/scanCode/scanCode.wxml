@@ -1,5 +1,0 @@
-<view class="scanBtn" bindtap="scanCodeEvent1">二维码</view>
-<view class="scanBtn" bindtap="scanCodeEvent2">一维码</view>
-
-
-<text>{{result}}</text>

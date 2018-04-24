@@ -1,46 +1,11 @@
 {
   "pages": [
-    "pages/index/index",
-    "pages/logs/logs",
-    "pages/iphone-cropper/iphone-cropper",
-    "pages/test/test",
-    "pages/camera/camera",
-    "pages/scanCode/scanCode",
-    "pages/zhuanpan/zhuanpan",
-    "pages/form/form",
-    "pages/picker/picker",
-    "pages/live-pusher/live-pusher",
-    "pages/record/record"
+    "pages/index/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
+    "navigationBarTitleText": "寻书",
     "navigationBarTextStyle": "black"
-  },
-  "tabBar": {
-    "list": [
-      {
-        "pagePath": "pages/index/index",
-        "text": "首页",
-        "iconPath": "images/index.png",
-        "selectedIconPath": "images/index_selected.png"
-      },
-      {
-        "pagePath": "pages/logs/logs",
-        "text": "音乐",
-        "iconPath": "images/music.png",
-        "selectedIconPath": "images/music_selected.png"
-      },
-      {
-        "pagePath": "pages/camera/camera",
-        "text": "拍照",
-        "iconPath": "images/camera.png",
-        "selectedIconPath": "images/camera_selected.png"
-      }
-    ],
-    "color": "#959595",
-    "selectedColor": "#8b7fd3",
-    "backgroundColor": "#eeeeee"
   }
 }

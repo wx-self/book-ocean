@@ -1,8 +1,0 @@
-<button bindtap="start" class='btn'>开始录音</button>
-<button bindtap="stop" class='btn'>停止录音</button>
-<button bindtap="play" class='btn'>播放录音</button> 
-
-<!-- <view class="section">
-  <textarea bindlongtap='start' placeholder="长按可进行语音识别" />
-  <view class="bg" bindtouchstart='start' bindtouchend='stop'></view>
-</view> -->

@@ -1,2 +1,0 @@
-<camera device-position="back" style="width:100%;height:50%"></camera>
-<view class="take_photo_btn" bindtap='takePhoto'>拍照</view>
