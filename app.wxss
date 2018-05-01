@@ -1,1 +1,6 @@
-
+page{
+  box-sizing: border-box;
+  padding: 0 25rpx;
+  width: 100%;
+  background: linear-gradient(rgba(34, 134, 134, 1),rgba(255, 255, 255, 0)) no-repeat;
+}

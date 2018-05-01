@@ -1,65 +1,57 @@
 Page({
 
-  /**
-   * 页面的初始数据
-   */
   data: {
+    pageType: 'class',//class:表示的是当前书的类别  tag:表示的是一个类别下的tag
+    allClass: [
+      { classId: 1, className: '文学'},
+      { classId: 2, className: '流行'},
+      { classId: 3, className: '文化'},
+      { classId: 4, className: '生活'},
+      { classId: 5, className: '经管'},
+      { classId: 6, className: '科技'},
+    ],
+    tagList: [],//一个类别下的所有的tag
+    className: '',//选择的类别
+  },
+
+  onLoad(options) {
     
   },
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-    
+  onShow() {
+    this.setData({
+      pageType: 'class',
+    })
   },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-    
+  // 选择书的类别
+  selectBookClassFn(e) {
+    wx.request({
+      url: `http://172.16.22.168:8080/WxProgram/findAllTagByClass?classId=${e.currentTarget.dataset.id}`,
+      success: (res) => {
+        this.setData({
+          tagList: res.data,
+          pageType: 'tag',
+          className: e.currentTarget.dataset.className
+        })
+      },
+      fail: (err) => {
+        console.log(err);
+      }
+    })
   },
 
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-    
+  // 选择tag
+  selectBookTagFn(e) {
+    wx.navigateTo({
+      url: `/pages/book-list/book-list?className=${this.data.className}&tag=${e.currentTarget.dataset.tag}`,
+    })
   },
 
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-    
+  goBackClassFn() {
+    this.setData({
+      pageType: 'class',
+    })
   },
 
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-    
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-    
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-    
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-    
-  }
 })

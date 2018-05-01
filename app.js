@@ -1,40 +1,17 @@
 //app.js
 App({
   onLaunch: function () {
-    // 展示本地存储能力
-    var logs = wx.getStorageSync('logs') || []
-    logs.unshift(Date.now())
-    wx.setStorageSync('logs', logs)
-
     // 登录
     wx.login({
       success: res => {
+        console.log('login',res)
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
       }
     })
-    // 获取用户信息
-    wx.getSetting({
-      success: res => {
-        if (res.authSetting['scope.userInfo']) {
-          // 已经授权，可以直接调用 getUserInfo 获取头像昵称，不会弹框
-          wx.getUserInfo({
-            success: res => {
-              // 可以将 res 发送给后台解码出 unionId
-              this.globalData.userInfo = res.userInfo
 
-              // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
-              // 所以此处加入 callback 以防止这种情况
-              if (this.userInfoReadyCallback) {
-                this.userInfoReadyCallback(res)
-              }
-            }
-          })
-        }
-      }
-    })
   },
   globalData: {
-    userInfo: null
+    userInfo: {},
   }
 })
 
@@ -111,4 +88,6 @@ App({
       当小程序冷启动时会检查是否有新版本，如果有就会下载新版本的代码包，但是这次冷启动还是会使用上次的代码包进行启动，当下次进行小程序的冷启动的时候才会应用新的代码包
 
     小程序发版，客户端先用之前的包打开，异步更新好。下次重新打开才使用新包。7天之内不使用的小程序会被强制的更新一次
+
+  6.现在获取用户信息不能再使用wx.getUserInfo接口 要是用button按钮 让用户拥有主动权去选择要不要暴露自己的私人信息 也防止开发者在用户一进入的时候就要获取用户信息，如果用户不同意则不能使用该小程序，这种体验非常的不好
 */

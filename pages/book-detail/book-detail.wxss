@@ -1,0 +1,66 @@
+.detail-container {
+  position: relative;
+  box-sizing: border-box;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.detail-container .book-cover {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+  padding: 30rpx 0;
+  border-bottom: 1rpx solid #268686;
+}
+
+.book-cover image {
+  width: 150rpx;
+  height: 220rpx;
+}
+
+.detail-container .detail-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  width: 100%;
+  line-height: 80rpx;
+  color: #268686;
+  font-size: 28rpx;
+}
+
+.detail-item .detail-item-title {
+  width: 140rpx;
+  line-height: 80rpx;
+}
+
+.detail-item .detail-item-value {
+  width: 560rpx;
+  line-height: 80rpx;
+}
+
+.no_detail_info {
+  width: 100%;
+  line-height: 200rpx;
+  text-align: center;
+  color: #fff;
+  font-size: 30rpx;
+}
+
+.detail-container .get-info-btn{
+  position: absolute;
+  top: 30rpx;
+  right: 30rpx;
+  padding: 0;
+  width: 70rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  background-color: #fff;
+  border-radius: 8rpx;
+  color: #268686;
+  font-size: 20rpx;
+  text-align: center;
+}

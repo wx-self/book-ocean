@@ -1,7 +1,7 @@
 {
 	"description": "项目配置文件。",
 	"setting": {
-		"urlCheck": true,
+		"urlCheck": false,
 		"es6": true,
 		"postcss": true,
 		"minified": true,
@@ -28,9 +28,26 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": -1,
+			"current": 0,
 			"list": [
-				
+				{
+					"id": -1,
+					"name": "我的",
+					"pathName": "pages/person/person",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "搜索",
+					"pathName": "pages/search/search",
+					"query": ""
+				},
+				{
+					"id": 2,
+					"name": "书籍详情",
+					"pathName": "pages/book-detail/book-detail",
+					"query": "bookName=解忧杂货铺"
+				}
 			]
 		}
 	}

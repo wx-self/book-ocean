@@ -1,0 +1,102 @@
+.avatar-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 350rpx;
+  font-size: 28rpx;
+  color: #268686;
+  /* background: linear-gradient(135deg, #f9f9f9 47%, #e9e9e9 50%, #e9e9e9 50%, #f9f9f9 0, #f9f9f9 99%, #e9e9e9 0); */
+  /* background-size: 16px 16px; */
+}
+.avatar-container .avatar{
+  width: 150rpx;
+  height: 150rpx;
+  margin-bottom: 20rpx;
+  background-color: #ffffff;
+  border: 1rpx solid #268686;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.avatar-container button{
+  padding: 0;
+  width: 100%;
+  height: 150rpx;
+  line-height: 150rpx;
+  background-color: transparent;
+  font-size: 24rpx;
+  color: #268686;
+}
+.avatar-container button::after{
+  border: none;
+}
+.avatar-container .avatar image{
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+/*edit  */
+.edit-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  box-sizing: border-box;
+  width: 100%;
+  height: 80rpx;
+  line-height: 80rpx;
+  border-bottom: 1rpx solid #268686;
+  color: #268686;
+  font-size: 24rpx;
+}
+.edit-container image{
+  width: 40rpx;
+  height: 40rpx;
+}
+
+/*books list  */
+.book-list .book-list-item{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  box-sizing: border-box;
+  padding-left: 20rpx;
+  width: 100%;
+  line-height: 150rpx;
+  border-bottom: 1rpx solid #268686;
+}
+.book-list .book-list-item image{
+  width: 80rpx;
+  height: 100rpx;
+  margin: 0 30rpx;
+}
+.book-list .book-list-item view{
+  color: #268686;
+  font-size: 24rpx;
+} 
+.book-list-item .check-box{
+  width: 30rpx;
+  height: 30rpx;
+  border-radius: 50%;
+  background-color: #ffffff;
+  border: 1rpx solid #268686;
+}
+.book-list-item .check-box-active{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 30rpx;
+  height: 30rpx;
+  border-radius: 50%;
+  border: 1rpx solid #268686;
+  background-color: #268686;
+}
+.book-list-item .check-box-active view{
+  width: 10rpx;
+  height: 10rpx;
+  border-radius: 50%;
+  background-color: #ffffff;
+}
