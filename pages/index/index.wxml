@@ -1,0 +1,10 @@
+<view class="big-class-container" wx:if="{{pageType === 'class'}}">
+  <!-- <image src=""></image> -->
+  <view class="big-class-item" wx:for="{{allClass}}" wx:for-item="item" wx:for-index="index" data-id="{{item.classId}}" data-class-name="{{item.className}}" bindtap='selectBookClassFn'>{{item.className}}</view>
+</view>
+
+<view class="tag-container" wx:if="{{pageType === 'tag'}}">
+  <view class="route" bindtap='goBackClassFn'>{{className}}</view>
+  <view class="bg"></view>
+  <view class="big-class-item" wx:for="{{tagList}}" wx:for-item="item" wx:for-index="inex" wx:key="{{item}}" data-tag="{{item}}" bindtap='selectBookTagFn'>{{item}}</view>
+</view>

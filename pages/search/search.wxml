@@ -1,0 +1,20 @@
+<view class="search-container">
+  <input placeholder='输入书名进行搜索' placeholder-class='placeholder' value="{{inputValue}}" bindinput='inputFn'></input>
+  <icon size='16' type='search' color='#268686'></icon>
+</view>
+
+<!--最近搜索  -->
+<view class="search-record">
+  <block wx:if="{{!inputValue}}">
+    <view class="search-record-title">热门搜索</view>
+    <view class="search-record-container">
+      <view class="search-record-item" wx:for="{{searchRecordLists}}" wx:for-item="item" wx:for-index="index" wx:key="item" data-book-name="{{item.name}}" bindtap='toBookDetail'>{{item.name}}</view>
+    </view>
+  </block>
+  <block wx:else>
+    <view class="search-record-title">您要找：</view>
+    <view class="search-result">
+      <view class="search-record-item" wx:for="{{searchResult}}" wx:for-item="item" wx:for-index="index" wx:key="item" data-book-name="{{item}}" bindtap='toBookDetail'>{{item}}</view>
+    </view>
+  </block>
+</view>

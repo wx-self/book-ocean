@@ -1,0 +1,59 @@
+<view class="detail-container">
+  <block wx:if="{{bookDetail}}">
+    <block wx:if="{{!isCollect}}">
+      <button class="get-info-btn" wx:if="{{showGetUserInfoBtn}}" open-type='getUserInfo' bindgetuserinfo='getUserInfoFn' data-book-id="{{bookDetail.id}}">收藏</button>
+      <view class="get-info-btn" wx:if="{{!showGetUserInfoBtn}}" data-book-id="{{bookDetail.id}}" bindtap='collectFn'>收藏</view>
+    </block>
+    <block wx:if="{{isCollect}}">
+      <view class="get-info-btn">已收藏</view>
+    </block>
+    <view class="book-cover">
+      <image wx:if="{{bookDetail.image}}" src='{{bookDetail.image}}'></image>
+      <image wx:if="{{!bookDetail.image}}" src='/images/no_image.png'></image>
+    </view>
+    <view class="detail-item">
+      <view class="detail-item-title">书名：</view>
+      <view class="detail-item-value">{{bookDetail.title}}</view>
+    </view>
+    <view class="detail-item">
+      <view class="detail-item-title">评分：</view>
+      <view class="detail-item-value">{{bookDetail.scor}}</view>
+    </view>
+    <view class="detail-item">
+      <view class="detail-item-title">作者：</view>
+      <view class="detail-item-value">{{bookDetail.author}}</view>
+    </view>
+    <view class="detail-item">
+      <view class="detail-item-title">价格：</view>
+      <view class="detail-item-value">{{bookDetail.price}}</view>
+    </view>
+    <view class="detail-item">
+      <view class="detail-item-title">出版时间：</view>
+      <view class="detail-item-value">{{bookDetail.time}}</view>
+    </view>
+    <view class="detail-item">
+      <view class="detail-item-title">出版社：</view>
+      <view class="detail-item-value">{{bookDetail.publish}}</view>
+    </view>
+    <view class="detail-item">
+      <view class="detail-item-title">评分人数：</view>
+      <view class="detail-item-value">{{bookDetail.person}}</view>
+    </view>
+    <view class="detail-item">
+      <view class="detail-item-title">译者：</view>
+      <view class="detail-item-value">{{bookDetail.yizhe}}</view>
+    </view>
+    <view class="detail-item">
+      <view class="detail-item-title">分类：</view>
+      <view class="detail-item-value">{{bookDetail.tag}}</view>
+    </view>
+    <view class="detail-item">
+      <view class="detail-item-title">简介：</view>
+      <view class="detail-item-value">{{bookDetail.intro}}</view>
+    </view>
+  </block>
+  <block wx:else>
+    <view class="no_detail_info">暂无
+      <text style="color:#67eeee;">《{{bookName}}》</text>的详细信息，请重新进行搜索。</view>
+  </block>
+</view>
