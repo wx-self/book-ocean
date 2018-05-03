@@ -1,3 +1,5 @@
+import host from '../../utils/services.js';
+
 Page({
 
   data: {
@@ -38,7 +40,12 @@ Page({
   // 根据输入框中的内容进行搜索
   searchFn() {
     wx.request({
-      url: `http://172.16.22.168:8080/WxProgram/findBookListByName?bookName=${this.data.inputValue}&pageIndex=${this.data.pageIndex}`,
+      url: host.host + `/WxProgram/findBookListByName`,
+      method: 'POST',
+      data: {
+        bookName: this.data.inputValue,
+        pageIndex: this.data.pageIndex
+      },
       success: (res) => {
         let searchResult = res.data;
         searchResult.forEach((item, index) => {

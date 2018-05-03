@@ -1,3 +1,5 @@
+import host from '../../utils/services.js';
+
 let app = getApp();
 
 Page({
@@ -44,7 +46,7 @@ Page({
   // 获取书籍详情
   getBookDetailFn() {
     wx.request({
-      url: `http://172.16.22.168:8080/WxProgram/findBookByName?bookName=${this.data.bookName}`,
+      url: host.host + `/WxProgram/findBookByName?bookName=${this.data.bookName}`,
       success: (res) => {
         this.setData({
           bookDetail: res.data
@@ -59,7 +61,7 @@ Page({
   // 
   getBookDetailById() {
     wx.request({
-      url: `http://172.16.22.168:8080/WxProgram/findBookByIdIsCollect?bookId=${this.data.bookId}&nick=${app.globalData.userInfo.nickName}`,
+      url: host.host + `/WxProgram/findBookByIdIsCollect?bookId=${this.data.bookId}&nick=${app.globalData.userInfo.nickName}`,
       success: (res) => {
         this.setData({
           bookDetail: res.data.book,
@@ -76,7 +78,7 @@ Page({
   collectFn(e) {
     if (JSON.stringify(app.globalData.userInfo) !== '{}'){
       wx.request({
-        url: `http://172.16.22.168:8080/WxProgram/addUserAndBook`,
+        url: host.host + `/WxProgram/addUserAndBook`,
         method: 'POST',
         headers: {
           'Content-Type': 'application/json;charset=utf-8',

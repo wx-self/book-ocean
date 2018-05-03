@@ -1,8 +1,11 @@
+import host from '../../utils/services.js';
+
 Page({
 
   data: {
     className: '',
     tag: '',
+    tagId: '',
     pageIndex: 1,//下次获取第几页的数据
     bookList: [],
   },
@@ -11,6 +14,7 @@ Page({
     this.setData({
       className: options.className,
       tag: options.tag,
+      tagId: options.tagId,
     })
     this.getBookListFn();
   },
@@ -26,7 +30,7 @@ Page({
       title: '正在加载',
     })
     wx.request({
-      url: `http://172.16.22.168:8080/WxProgram/findAllBookByTag?tag=${this.data.tag}&pageIndex=${this.data.pageIndex}`,
+      url: host.host + `/WxProgram/findAllBookByTag?tagId=${this.data.tagId}&pageIndex=${this.data.pageIndex}`,
       success: (res) => {
         wx.hideLoading();
         console.log('success',res.data);

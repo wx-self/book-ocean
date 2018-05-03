@@ -1,3 +1,5 @@
+import host from '../../utils/services.js';
+
 let app = getApp();
 
 Page({
@@ -42,7 +44,7 @@ Page({
   // 获取该用户下的收藏的图书列表
   getCollectionListFn() {
     wx.request({
-      url: `http://172.16.22.168:8080/WxProgram/getBookByUser?nick=${this.data.userInfo.nickName}`,
+      url: host.host + `/WxProgram/getBookByUser?nick=${this.data.userInfo.nickName}`,
       success: (res) => {
         console.log(res);
         this.setData({
@@ -87,7 +89,7 @@ Page({
       }
     })
     wx.request({
-      url: `http://172.16.22.168:8080/WxProgram/deleteBookById?nick=${this.data.userInfo.nickName}&bookIds=${bookIds}`,
+      url: host.host + `/WxProgram/deleteBookById?nick=${this.data.userInfo.nickName}&bookIds=${bookIds}`,
       success: (res) => {
         console.log(res);
         this.getCollectionListFn();

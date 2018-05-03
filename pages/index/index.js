@@ -1,3 +1,6 @@
+import host from '../../utils/services.js';
+console.log(host.host)
+
 Page({
 
   data: {
@@ -28,7 +31,7 @@ Page({
   selectBookClassFn(e) {
     console.log('selectBookClassFn', e.currentTarget.dataset.id);
     wx.request({
-      url: `http://172.16.22.168:8080/WxProgram/findAllTagByClass?classId=${e.currentTarget.dataset.id}`,
+      url: host.host + `/WxProgram/findAllTagByClass?classId=${e.currentTarget.dataset.id}`,
       success: (res) => {
         console.log('success',res.data);
         this.setData({
@@ -46,7 +49,7 @@ Page({
   // 选择tag
   selectBookTagFn(e) {
     wx.navigateTo({
-      url: `/pages/book-list/book-list?className=${this.data.className}&tag=${e.currentTarget.dataset.tag}`,
+      url: `/pages/book-list/book-list?className=${this.data.className}&tag=${e.currentTarget.dataset.tag}&tagId=${e.currentTarget.dataset.tagId}`,
     })
   },
 
