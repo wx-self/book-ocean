@@ -16,12 +16,12 @@ Page({
   },
 
   onReachBottom() {
-    console.log('onReachBottom');
     this.getBookListFn();
   },
 
   // 获取书籍列表
   getBookListFn() {
+    console.log('getBookListFn');
     wx.showLoading({
       title: '正在加载',
     })
@@ -29,6 +29,7 @@ Page({
       url: `http://172.16.22.168:8080/WxProgram/findAllBookByTag?tag=${this.data.tag}&pageIndex=${this.data.pageIndex}`,
       success: (res) => {
         wx.hideLoading();
+        console.log('success',res.data);
         let bookList = res.data;
         bookList.forEach((item,index) => {
           this.data.bookList.push(item)

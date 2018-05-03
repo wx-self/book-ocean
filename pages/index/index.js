@@ -26,9 +26,11 @@ Page({
 
   // 选择书的类别
   selectBookClassFn(e) {
+    console.log('selectBookClassFn', e.currentTarget.dataset.id);
     wx.request({
       url: `http://172.16.22.168:8080/WxProgram/findAllTagByClass?classId=${e.currentTarget.dataset.id}`,
       success: (res) => {
+        console.log('success',res.data);
         this.setData({
           tagList: res.data,
           pageType: 'tag',

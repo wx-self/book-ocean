@@ -1,6 +1,6 @@
 <view class="search-container">
   <input placeholder='输入书名进行搜索' placeholder-class='placeholder' value="{{inputValue}}" bindinput='inputFn'></input>
-  <icon size='16' type='search' color='#268686'></icon>
+  <icon size='16' type='cancel' color='#268686' bindtap='cancelFn'></icon>
 </view>
 
 <!--最近搜索  -->

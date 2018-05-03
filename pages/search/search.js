@@ -55,6 +55,13 @@ Page({
     })
   },
 
+  // 取消搜索
+  cancelFn() {
+    this.setData({
+      inputValue: '',
+    }) 
+  },
+
   // 点击查看书籍详情
   toBookDetail(e) {
     wx.navigateTo({

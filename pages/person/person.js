@@ -59,14 +59,17 @@ Page({
   toBookDetailFn(e) {
     if (!this.data.isEdit){
       wx.navigateTo({
-        url: `/pages/book-detail/book-detail?book_name=${e.currentTarget.dataset.bookName}`,
+        url: `/pages/book-detail/book-detail?book_name=${e.currentTarget.dataset.bookName}&book_id=${e.currentTarget.dataset.bookId}`,
       })
     }else{
       let bookLists = this.data.bookLists;
       bookLists.forEach((item,index) => {
         if (item.id === e.currentTarget.dataset.bookId){
-          
-          item.selected = true;
+          if (item.selected){
+            item.selected = false;
+          }else{
+            item.selected = true;
+          }
         }
       })
       this.setData({
