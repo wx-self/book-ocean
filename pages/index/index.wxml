@@ -6,5 +6,5 @@
 <view class="tag-container" wx:if="{{pageType === 'tag'}}">
   <view class="route" bindtap='goBackClassFn'>{{className}}</view>
   <view class="bg"></view>
-  <view class="big-class-item" wx:for="{{tagList}}" wx:for-item="item" wx:for-index="inex" wx:key="{{item}}" data-tag="{{item}}" data-tag-id="{{index}}" bindtap='selectBookTagFn'>{{item}}</view>
+  <view class="big-class-item" wx:for="{{tagList}}" wx:for-item="item" wx:for-index="index" wx:key="{{item}}" data-tag="{{item}}" data-tag-id="{{index}}" bindtap='selectBookTagFn'>{{item}}</view>
 </view>

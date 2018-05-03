@@ -25,7 +25,6 @@ Page({
 
   // 获取书籍列表
   getBookListFn() {
-    console.log('getBookListFn');
     wx.showLoading({
       title: '正在加载',
     })
@@ -33,7 +32,6 @@ Page({
       url: host.host + `/WxProgram/findAllBookByTag?tagId=${this.data.tagId}&pageIndex=${this.data.pageIndex}`,
       success: (res) => {
         wx.hideLoading();
-        console.log('success',res.data);
         let bookList = res.data;
         bookList.forEach((item,index) => {
           this.data.bookList.push(item)
@@ -51,7 +49,6 @@ Page({
 
   // 
   toBookDetailFn(e) {
-    console.log(e.currentTarget.dataset.bookName)
     wx.navigateTo({
       url: `/pages/book-detail/book-detail?book_name=${e.currentTarget.dataset.bookName}&book_id=${e.currentTarget.dataset.bookId}`,
     })

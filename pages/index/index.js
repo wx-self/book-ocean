@@ -29,7 +29,6 @@ Page({
 
   // 选择书的类别
   selectBookClassFn(e) {
-    console.log('selectBookClassFn', e.currentTarget.dataset.id);
     wx.request({
       url: host.host + `/WxProgram/findAllTagByClass?classId=${e.currentTarget.dataset.id}`,
       success: (res) => {
