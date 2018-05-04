@@ -5,13 +5,13 @@ Page({
   data: {
     inputValue: '',//搜索框中的内容
     searchRecordLists: [
-      { name: '解忧杂货店' },
-      { name: '白夜行' },
-      { name: '大秦帝国' },
-      { name: '万历十五年' },
-      { name: '红楼梦' },
-      { name: '深入理解java虚拟机' },
-      { name: '推荐系统实战' },
+      { name: '解忧杂货店', id: '1' },
+      { name: '白夜行', id: '232'  },
+      { name: '大秦帝国', id: '40546'},
+      { name: '万历十五年', id: '11454'},
+      { name: '红楼梦', id: '122'},
+      { name: '月亮与六便士', id: '13'},
+      { name: '小王子', id: '1001'},
     ],//搜索记录列表
     searchResult: [],//搜索结果列表
     pageIndex: 1,
