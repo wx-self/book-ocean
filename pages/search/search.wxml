@@ -14,7 +14,7 @@
   <block wx:else>
     <view class="search-record-title">您要找：</view>
     <view class="search-result">
-      <view class="search-record-item" wx:for="{{searchResult}}" wx:for-item="item" wx:for-index="index" wx:key="item" data-book-name="{{item}}" bindtap='toBookDetail'>{{item}}</view>
+      <view class="search-record-item" wx:for="{{searchResult}}" wx:for-item="item" wx:for-index="index" wx:key="item" data-book-name="{{item.title}}" data-book-id="{{item.id}}" bindtap='toBookDetail'>{{item.title}}</view>
     </view>
   </block>
 </view>

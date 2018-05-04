@@ -31,8 +31,11 @@ Page({
   
   // 输入框输入事件
   inputFn(e) {
+    // 输入框中的内容每次变动都要给pageIndex和searchResult重新赋值
     this.setData({
-      inputValue: e.detail.value
+      inputValue: e.detail.value,
+      pageIndex: 1,
+      searchResult: [],
     })
     this.searchFn();
   },
@@ -72,7 +75,7 @@ Page({
   // 点击查看书籍详情
   toBookDetail(e) {
     wx.navigateTo({
-      url: `/pages/book-detail/book-detail?book_name=${e.currentTarget.dataset.bookName}`,
+      url: `/pages/book-detail/book-detail?book_name=${e.currentTarget.dataset.bookName}&book_id=${e.currentTarget.dataset.bookId}`,
     })
   },
 
