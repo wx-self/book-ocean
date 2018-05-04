@@ -61,7 +61,12 @@ Page({
   // 
   getBookDetailById() {
     wx.request({
-      url: host.host + `/WxProgram/findBookByIdIsCollect?bookId=${this.data.bookId}&nick=${app.globalData.userInfo.nickName}`,
+      url: host.host + `/WxProgram/findBookByIdIsCollect`,
+      method: 'POST',
+      data: {
+        bookId: this.data.bookId,
+        nick: app.globalData.userInfo.nickName,
+      },
       success: (res) => {
         this.setData({
           bookDetail: res.data.book,
