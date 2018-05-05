@@ -44,7 +44,11 @@ Page({
   // 获取该用户下的收藏的图书列表
   getCollectionListFn() {
     wx.request({
-      url: host.host + `/WxProgram/getBookByUser?nick=${this.data.userInfo.nickName}`,
+      url: host.host + `/WxProgram/getBookByUser`,
+      method: 'POST',
+      data: {
+        nick: this.data.userInfo.nickName,
+      },
       success: (res) => {
         console.log(res);
         this.setData({
@@ -89,7 +93,12 @@ Page({
       }
     })
     wx.request({
-      url: host.host + `/WxProgram/deleteBookById?nick=${this.data.userInfo.nickName}&bookIds=${bookIds}`,
+      url: host.host + `/WxProgram/deleteBookById`,
+      method: 'POST',
+      data: {
+        nick: this.data.userInfo.nickName,
+        bookIds: bookIds
+      },
       success: (res) => {
         console.log(res);
         this.getCollectionListFn();
