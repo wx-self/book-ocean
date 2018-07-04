@@ -1,0 +1,26 @@
+<view class="avatar-container">
+  <view class="avatar">
+    <button open-type='getUserInfo' bindgetuserinfo='getUserInfoFn' wx:if='{{showUserInfoBtn}}'>点击登录</button>
+    <image wx:else src='{{userInfo.avatarUrl}}'></image>
+  </view>
+  <view wx:if='{{!showUserInfoBtn}}'>{{userInfo.nickName}}</view>
+</view>
+
+<!--编辑部分  -->
+<view class="edit-container">
+  <view>我的收藏</view>
+  <view bindtap='editFn'>
+    <image src='/images/edit.png' wx:if="{{!isEdit}}"></image>
+    <view wx:if="{{isEdit}}" bindtap='deleteCollectBookFn'>删除</view>
+  </view>
+</view>
+
+<!--列表部分  -->
+<view class="book-list">
+  <view class='book-list-item' wx:for="{{bookLists}}" wx:for-item="item" wx:for-index="index" wx:key="item" data-book-name="{{item.title}}" data-book-id="{{item.id}}" bindtap='toBookDetailFn'>
+    <view class="{{item.selected ? 'check-box-active' : 'check-box'}}" wx:if="{{isEdit}}"><view></view></view>
+    <!-- <view class="" wx:if="{{!isEdit}}"><view></view></view> -->
+    <image src='{{item.image}}'></image>
+    <view>{{item.title}}</view>
+  </view>
+</view>

@@ -1,11 +1,42 @@
 {
   "pages": [
-    "pages/index/index"
+    "pages/index/index",
+    "pages/search/search",
+    "pages/person/person",
+    "pages/book-detail/book-detail",
+    "pages/book-list/book-list"
   ],
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#fff",
+    "navigationBarBackgroundColor": "#268686",
     "navigationBarTitleText": "寻书",
-    "navigationBarTextStyle": "black"
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "分类",
+        "iconPath": "images/menu.png",
+        "selectedIconPath": "images/selected_menu.png"
+      },
+      {
+        "pagePath": "pages/search/search",
+        "text": "搜索",
+        "iconPath": "images/search.png",
+        "selectedIconPath": "images/selected_search.png"
+      },
+      {
+        "pagePath": "pages/person/person",
+        "text": "我的",
+        "iconPath": "images/my.png",
+        "selectedIconPath": "images/selected_my.png"
+      }
+    ],
+    "color": "#353535",
+    "selectedColor": "#268686",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "white",
+    "position": "bottom"
   }
 }

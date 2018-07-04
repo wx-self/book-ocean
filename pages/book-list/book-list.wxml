@@ -1,0 +1,9 @@
+<view class="container">
+  <view class="route">{{className}} > {{tag}}</view>
+  <view class="bg"></view>
+  <view class="book-item" wx:for="{{bookList}}" wx:for-item="item" wx:for-index="index" bindtap='toBookDetailFn' data-book-name="{{item.title}}"  data-book-id="{{item.id}}">
+    <image wx:if="{{item.image}}" src='{{item.image}}'></image>
+    <image wx:else src="/images/no_image.png"></image>
+    <view>{{item.title}}</view>
+  </view>
+</view>
